@@ -10,7 +10,7 @@ The card wall is here: [[[]]]
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-## Quickstart
+### Quickstart
 
 First, clone this repository. Then:
 
