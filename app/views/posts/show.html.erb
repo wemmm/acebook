@@ -1,0 +1,28 @@
+<p>
+<%= @post.message %>
+</p>
+
+<h2>Comments</h2>
+<ul>
+<% @post.comments.each do |comment| %>
+<li>
+<%= comment.body %>
+</li>
+<% end %>
+</ul>
+
+Add a comment
+<%= form_for([@post, @post.comments.build]) do |form| %>
+  <p>
+    <%= form.text_area :body %>
+  </p>
+
+  <p>
+    <%= form.submit "Post comment" %>
+  </p>
+<% end %>
+
+
+<%= link_to posts_path do %>
+  Back to Posts
+<% end %>
