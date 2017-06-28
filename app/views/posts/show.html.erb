@@ -1,5 +1,5 @@
 <p>
-<%= @post.message %>
+<%= simple_format(@post.message)%>
 </p>
 
 <h2>Comments</h2>
@@ -19,6 +19,12 @@ Add a comment
 
   <p>
     <%= form.submit "Post comment" %>
+  </p>
+<% end %>
+
+<%= form_for([@post, @post.likes.build]) do |form| %>
+  <p>
+    <%= form.submit "Like" %>
   </p>
 <% end %>
 
