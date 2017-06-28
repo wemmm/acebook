@@ -8,4 +8,9 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
   end
+
+  scenario 'can see a timestamp for a post' do
+    create_new_post
+    expect(page).to have_content('/17')
+  end
 end
