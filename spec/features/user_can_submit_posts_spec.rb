@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
+    sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
@@ -10,11 +11,13 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario 'can see a timestamp for a post' do
+    sign_up
     create_new_post
     expect(page).to have_content('/17')
   end
 
   scenario 'posts are displayed newest to oldest' do
+    sign_up
     create_three_new_posts
     expect('3').to appear_before('2')
     expect('2').to appear_before('1')

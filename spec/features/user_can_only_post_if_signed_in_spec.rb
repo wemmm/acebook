@@ -4,9 +4,10 @@ RSpec.feature 'Users', type: :feature do
   scenario 'Can only post if signed in' do
     visit '/posts/new'
     expect(page).to have_content('Sorry, you need to be logged in to make a new post')
-    expect(page).not_to have_field(message)
+    expect(page).not_to have_field('post_message')
     sign_up
-    expect(page).to have_field(message)
+    visit '/posts/new'
+    expect(page).to have_field('post_message')
   end
 
   scenario 'New post link only present when user has signed in' do
