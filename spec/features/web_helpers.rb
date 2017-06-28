@@ -11,4 +11,18 @@ def create_long_post
   fill_in "Message", with: "Hello world,\n How are you?"
   click_button "Submit"
   expect(page).to have_content("Hello world,\n How are you?")
+
+def create_three_new_posts
+  visit "/posts"
+  click_link "New post"
+  fill_in "Message", with: "Test post 1!"
+  click_button "Submit"
+  visit "/posts"
+  click_link "New post"
+  fill_in "Message", with: "Test post 2!"
+  click_button "Submit"
+  visit "/posts"
+  click_link "New post"
+  fill_in "Message", with: "Test post 3!"
+  click_button "Submit"
 end
