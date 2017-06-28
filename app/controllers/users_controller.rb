@@ -6,11 +6,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to users_url
+    log_in(@user)
+    redirect_to current_user
   end
 
   def index
     @users = User.all
+  end
+
+  def show
   end
 
   private
