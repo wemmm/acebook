@@ -13,4 +13,8 @@ RSpec.feature "Timeline", type: :feature do
     create_new_post
     expect(page).to have_content('/17')
   end
+
+  scenario 'posts are displayed newest to oldest' do
+    create_new_post
+  end
 end
