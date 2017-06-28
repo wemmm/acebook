@@ -1,0 +1,8 @@
+<% @users.each do |user| %>
+  <p><%= user.username %></p>
+<% end %>
+<br>
+
+<%= link_to posts_path do %>
+  Posts
+<% end %>
