@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <!-- NAVBAR ITEMS GO HERE -->
+    <!-- Sign up needs to point to new_user_path -->
+    <!-- Log in needs to point to login_path -->
+    <%= link_to "Home", posts_url %>
+    <%= link_to "Posts", posts_url %>
+    <%= link_to "Log In" %>
+    <%= link_to "Sign Up" %>
     <%= yield %>
   </body>
 </html>
