@@ -1,6 +1,13 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
+<% if current_user %>
 
-  <%= form.submit "Submit" %>
+  <%= form_for @post do |form| %>
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+
+    <%= form.submit "Submit" %>
+  <% end %>
+<% else %>
+  <div>
+    Sorry, you need to be logged in to make a new post
+  </div>
 <% end %>
