@@ -27,3 +27,19 @@ def create_three_new_posts
   fill_in 'Message', with: 'Test post 3!'
   click_button 'Submit'
 end
+
+def sign_up
+  visit '/posts'
+  click_link 'Sign Up'
+  fill_in 'Username', with: 'Jade'
+  fill_in 'Password', with: '123'
+  fill_in 'Email', with: 'jade@jade.com'
+  click_button 'Submit'
+end
+
+def log_in
+  visit '/login'
+  fill_in 'Email', with: 'jade@jade.com'
+  fill_in 'Password', with: '123'
+  click_button('Log in')
+end
