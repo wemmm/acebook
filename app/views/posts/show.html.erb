@@ -6,7 +6,10 @@
 <ul>
 <% @post.comments.each do |comment| %>
 <li>
-<%= comment.body %>
+  Comment by
+  <%= link_to "#{comment.user.username}", comment.user %>
+  <%= comment.created_at.strftime('at %R on %d/%m/%y') %> -
+  <%= comment.body %>
 </li>
 <% end %>
 </ul>
@@ -25,12 +28,6 @@ Add a comment:
 <% else %>
   <p>Please <%= link_to "sign up", new_user_path %> to comment on a post!</p>
 <% end %>
-
-<!-- <%= form_for([@post, @post.likes.build]) do |form| %>
-  <p>
-    <%= form.submit "Like" %>
-  </p>
-<% end %> -->
 
 <%= link_to posts_path do %>
   Back to Posts
