@@ -29,12 +29,6 @@ Add a comment:
   <p>Please <%= link_to "sign up", new_user_path %> to comment on a post!</p>
 <% end %>
 
-<!-- <%= form_for([@post, @post.likes.build]) do |form| %>
-  <p>
-    <%= form.submit "Like" %>
-  </p>
-<% end %> -->
-
 <%= link_to posts_path do %>
   Back to Posts
 <% end %>
