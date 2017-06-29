@@ -6,8 +6,9 @@
   <br>
   <%= link_to 'Comments', post_path(post) %>
 
-<%= button_to post_likes_path(post) do %>
-  Like
+  <%= button_to post_likes_path(post) do %>
+    Like
+  <% end %>
 <% end %>
 
 <% if current_user %>
@@ -15,7 +16,3 @@
     New post
   <% end %>
 <% end %>
-<br>
-  <%= link_to new_post_path do %>
-    New post
-  <% end %>
