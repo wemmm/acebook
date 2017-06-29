@@ -1,5 +1,5 @@
 <% @posts.reverse.each do |post| %>
-  <div id=<%= post.id %> >
+<div class="post" id="posts" >
   <%= simple_format(post.message) %>
   Posted by
   <%= link_to "#{post.user.username}", post.user %>
@@ -13,9 +13,11 @@
     <%= button_to post_likes_path(post) do %>
     Like
     <% end %>
+    <br>
   <% end %>
 
 <% end %>
+<br>
 </div>
 
 <% if current_user %>

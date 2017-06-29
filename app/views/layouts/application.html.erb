@@ -16,12 +16,14 @@
 
     <!-- NAVBAR ITEMS GO HERE -->
     <div class="navbar">
+      <h3>AceBook</h3>
       <%= link_to "Home", posts_url %>
       <%= link_to "Posts", posts_url %>
       <%= link_to "Log In", login_path %>
       <%= link_to "Sign Up", new_user_path %>
       <%= link_to "Log Out", logout_path, method: :delete %>
     </div>
+    <br>
     <%= yield %>
     <%= debug(params) if Rails.env.development? %>
   </body>

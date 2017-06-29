@@ -1,10 +1,40 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
 * {
   text-align: center;
 }
 
+body {
+  text-align: center;
+}
+
 .navbar {
   background-color: #7bc6cc;
-
 }
+
+a:visited {
+  color: #FFFFFF;
+}
+
+h3 {
+  padding-top: 5px;
+  font-size: 35px;
+  font-family: 'Fredoka One';
+  color: white;
+}
+
+.post {
+  margin: auto;
+  align-self: center;
+  text-align: center;
+  // border-style: solid;
+  // border-width: thin;
+  // border-color: black;
+  width: 400px;
+}
+
+#posts a:link { color: #6c7b7c; }
+#posts a:visited { color: #6c7b7c; }
+#posts a:hover { color: #6c7b7c; }
+#posts a:active { color: #6c7b7c; }
