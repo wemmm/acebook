@@ -11,15 +11,19 @@
 <% end %>
 </ul>
 
-Add a comment
-<%= form_for([@post, @post.comments.build]) do |form| %>
-  <p>
-    <%= form.text_area :body %>
-  </p>
+Add a comment:
+<% if current_user %>
+  <%= form_for([@post, @post.comments.build]) do |form| %>
+    <p>
+      <%= form.text_area :body %>
+    </p>
 
-  <p>
-    <%= form.submit "Post comment" %>
-  </p>
+    <p>
+      <%= form.submit "Post comment" %>
+    </p>
+  <% end %>
+<% else %>
+  <p>Please <%= link_to "sign up", new_user_path %> to comment on a post!</p>
 <% end %>
 
 <!-- <%= form_for([@post, @post.likes.build]) do |form| %>
@@ -27,7 +31,6 @@ Add a comment
     <%= form.submit "Like" %>
   </p>
 <% end %> -->
-
 
 <%= link_to posts_path do %>
   Back to Posts
