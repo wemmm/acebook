@@ -10,8 +10,9 @@ RSpec.feature 'Comment restriction', type: :feature do
     expect(page).to have_content('Please sign up to comment on a post!')
     expect(page).not_to have_field('comment_body')
     expect(page).not_to have_button('Post comment')
-    sign_up
-    visit '/posts/1'
+    log_in
+    visit('/posts')
+    click_link('Comments')
     expect(page).to have_field('comment_body')
     expect(page).to have_button('Post comment')
   end

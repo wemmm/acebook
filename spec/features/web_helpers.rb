@@ -36,3 +36,10 @@ def sign_up
   fill_in 'Email', with: 'jade@jade.com'
   click_button 'Submit'
 end
+
+def log_in
+  visit '/login'
+  fill_in 'Email', with: 'jade@jade.com'
+  fill_in 'Password', with: '123'
+  click_button('Log in')
+end
