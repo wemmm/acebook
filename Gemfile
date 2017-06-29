@@ -7,6 +7,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bcrypt'
 gem 'rails-controller-testing'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
