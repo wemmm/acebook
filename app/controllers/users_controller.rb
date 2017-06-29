@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     log_in(@user)
-    redirect_to current_user
+    redirect_to @user
   end
 
   def index
