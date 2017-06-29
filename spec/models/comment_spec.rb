@@ -4,7 +4,9 @@ RSpec.describe Comment, type: :model do
   it 'can create a new comment' do
     user = User.create(username: 'Jade', password: '123456', email: 'jade@jade.com')
     post = user.posts.create(message: 'Hello test!')
-    comment = post.comments.create(body: 'Hello to you too!', user_id: '1')
+    comment = post.comments.build(body: 'Hello to you too!')
+    comment.user = user
+    comment.save
     expect(comment).to be_valid
   end
 

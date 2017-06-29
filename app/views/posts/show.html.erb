@@ -6,7 +6,10 @@
 <ul>
 <% @post.comments.each do |comment| %>
 <li>
-<%= comment.body %>
+  Comment by
+  <%= link_to "#{comment.user.username}", comment.user %>
+  <%= comment.created_at.strftime('at %R on %d/%m/%y') %> -
+  <%= comment.body %>
 </li>
 <% end %>
 </ul>
