@@ -22,9 +22,16 @@ RSpec.feature 'User Profile', type: :feature do
     expect(page).not_to have_button('Upload Avatar')
   end
 
-  scenario 'User can update their avatar' do
+  scenario 'Page displays a default avatar' do
     sign_up
     expect(page).to have_xpath("//img[contains(@src,'default_avatar.png')]")
+  end
+
+  scenario 'User can upload a custom avatar' do
+    sign_up
+    click_button('Upload Avatar')
+    attach_file("user_avatar", Rails.root + "thomas_avatar.jpg")
+    expect(page).to have_xpath("//img[contains(@src,'thomas_avatar.jpg')]")
   end
 
 end
