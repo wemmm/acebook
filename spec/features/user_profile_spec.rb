@@ -31,6 +31,7 @@ RSpec.feature 'User Profile', type: :feature do
     sign_up
     click_button('Upload Avatar')
     attach_file("user_avatar", Rails.root + "thomas_avatar.jpg")
+    click_button('Submit')
     user = User.find_by(username: 'Jade')
     expect(user.avatar.file.nil?).to be false
   end
@@ -39,6 +40,7 @@ RSpec.feature 'User Profile', type: :feature do
     sign_up
     click_button('Upload Avatar')
     attach_file("user_avatar", Rails.root + "thomas_avatar.jpg")
+    click_button('Submit')
     expect(page).to have_xpath("//img[contains(@src,'thomas_avatar.jpg')]")
   end
 
