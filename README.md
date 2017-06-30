@@ -15,6 +15,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 First, clone this repository. Then:
 
 ```bash
+brew install imagemagick
 bundle install
 bin/rails db:create
 bin/rails db:migrate
