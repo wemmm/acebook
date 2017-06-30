@@ -22,9 +22,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # def update
-  #   current_user.avatar =
-  # end
+  def update
+    # current_user.avatar =
+  end
 
   private
 

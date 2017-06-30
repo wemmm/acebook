@@ -27,6 +27,14 @@ RSpec.feature 'User Profile', type: :feature do
     expect(page).to have_xpath("//img[contains(@src,'default_avatar.png')]")
   end
 
+  scenario 'User can add image to their database entry' do
+    sign_up
+    click_button('Upload Avatar')
+    attach_file("user_avatar", Rails.root + "thomas_avatar.jpg")
+    user = User.find_by(username: 'Jade')
+    expect(user.avatar.file.nil?).to be false
+  end
+
   scenario 'User can upload a custom avatar' do
     sign_up
     click_button('Upload Avatar')
