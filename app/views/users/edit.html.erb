@@ -1,0 +1,8 @@
+<h1>Update Profile</h1>
+
+<%= form_for @user do |form| %>
+  <%= form.label :avatar %>
+  <%= form.file_field :avatar %>
+
+  <%= form.submit "Submit" %>
+<% end %>
