@@ -10,4 +10,6 @@
   </div>
   <br>
 </div>
-<%= button_to "Upload Avatar", edit_user_path(@user), method: :get %>
+<% if current_user == @user %>
+  <%= button_to "Upload Avatar", edit_user_path(@user), method: :get %>
+<% end %>
