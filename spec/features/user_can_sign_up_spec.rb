@@ -7,6 +7,6 @@ RSpec.feature 'User Sign Up', type: :feature do
     fill_in 'Email', with: 'jade@jade.com'
     fill_in 'Password', with: '123456'
     click_button 'Submit'
-    expect(page).to have_content('Hello, Jade!')
+    expect(page).to have_content("Jade's Profile")
   end
 end
